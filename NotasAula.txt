@@ -1,0 +1,7 @@
+AULA 1:
+
+*Revisão POO
+  *Classes
+    - Molde para os objetos (define suas carcterísticas e comportamentos)
+  *Objeto
+    - Instância da classe
