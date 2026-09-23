@@ -5,3 +5,96 @@ AULA 1:
     - Molde para os objetos (define suas carcterísticas e comportamentos)
   *Objeto
     - Instância da classe
+
+
+create database BDaula01;
+
+
+
+use Bdaula01;
+
+CREATE TABLE pessoa (
+id int auto_increment PRIMARY KEY,
+nome varchar(50) NOT NULL,
+sexo varchar(1) NOT NULL,
+idioma varchar(10) NOT NULL
+);
+
+INSERT INTO pessoa(nome, sexo, idioma)
+VALUES 
+("Ricardo", "M", "Português"),
+("Rafael", "M", "Português"),
+("Antony", "M", "Francês"),
+("Joe", "M", "Espanhol"),
+("Mary", "F", "Inglês");
+
+
+create database escola;
+
+use escola;
+
+CREATE TABLE aluno(
+id int auto_increment PRIMARY KEY,
+nome varchar(50) NOT NULL,
+idade int NOT NULL,
+curso varchar(50) NOT NULL
+);
+
+INSERT INTO aluno(nome, idade,curso)
+VALUES
+("João", 20, "Matemática"),
+("Maria", 22, "História"),
+("Pedro", 21, "Ciência da Computação"),
+("Ana", 19, "Biologia"),
+("Carlos", 23, "Economia");
+
+
+
+
+CREATE TABLE professor(
+id int auto_increment PRIMARY KEY,
+nome varchar(50) NOT NULL,
+idade int NOT NULL,
+disciplina varchar(50) NOT NULL
+);
+
+INSERT INTO professor(nome, idade, disciplina)
+VALUES
+("Jonas", 37, "Matemática"),
+("Leila", 46, "História"),
+("Martina", 39, "Biologia"),
+("Alexandre",52 ,"Ciência da Computação");
+
+AULA 8:
+
+Códigos SQL
+
+CREATE TABLE matricula(
+id int auto_increment PRIMARY KEY,
+id_aluno int, 
+id_professor int,
+data_matricula DATE,
+
+FOREIGN KEY (id_aluno) references aluno(id),
+FOREIGN KEY (id_professor) references professor(id)
+);
+
+
+
+INSERT INTO matricula(id_aluno, id_professor, data_matricula)
+VALUES
+(1, 1, '2020-01-15'),
+(2, 2, '2020-02-20'),
+(3, 3, '2020-03-10'),
+(4, 1, '2020-04-05'),
+(5, 2, '2020-05-12');
+
+desc matricula;
+
+show tables;
+
+select nome, curso
+FROM aluno;
+
+SELECT nome, disciplina
+FROM professor;
